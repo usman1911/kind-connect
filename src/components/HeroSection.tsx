@@ -35,19 +35,6 @@ const HeroSection = ({ onTryIt }: { onTryIt: () => void }) => {
           </Button>
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-3 gap-8 max-w-lg mx-auto mt-16">
-          {[
-            { value: "50+", label: "Emotions Detected" },
-            { value: "98%", label: "Accuracy" },
-            { value: "< 1s", label: "Response Time" },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center">
-              <div className="font-display text-3xl text-primary">{stat.value}</div>
-              <div className="font-body text-sm text-muted-foreground mt-1">{stat.label}</div>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
