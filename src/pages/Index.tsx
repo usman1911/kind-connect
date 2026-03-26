@@ -36,12 +36,8 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-12 bg-background border-t border-border">
         <div className="container px-4 text-center">
-          <div className="flex items-center justify-center gap-2 font-display text-lg text-foreground mb-2">
-            <Heart className="w-4 h-4 text-primary fill-primary" />
-            EmotiSense
-          </div>
           <p className="font-body text-sm text-muted-foreground">
-            AI-powered emotion and sentiment analysis. Built with empathy.
+            © {new Date().getFullYear()} EmotiSense
           </p>
         </div>
       </footer>
