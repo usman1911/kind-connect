@@ -20,9 +20,6 @@ const HeroSection = ({ onTryIt }: { onTryIt: () => void }) => {
           <span className="bg-gradient-warm bg-clip-text text-transparent">emotions</span> behind words
         </h1>
 
-        <p className="font-body text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-          EmotiSense uses advanced AI to detect emotions, analyze sentiment, and craft empathetic responses — helping you communicate with deeper understanding.
-        </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button variant="hero" size="lg" className="text-lg px-8 py-6 rounded-xl" onClick={onTryIt}>
