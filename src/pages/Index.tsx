@@ -33,14 +33,6 @@ const Index = () => {
       <FeaturesSection />
       <AnalyzerSection ref={analyzerRef} />
 
-      {/* Footer */}
-      <footer className="py-12 bg-background border-t border-border">
-        <div className="container px-4 text-center">
-          <p className="font-body text-sm text-muted-foreground">
-            © {new Date().getFullYear()} EmotiSense
-          </p>
-        </div>
-      </footer>
     </div>
   );
 };
