@@ -21,13 +21,19 @@ export function useSpeechSynthesis(): UseSpeechSynthesisReturn {
 
     window.speechSynthesis.cancel();
     const utterance = new SpeechSynthesisUtterance(cleanText);
-    utterance.rate = 1;
-    utterance.pitch = 1;
+    utterance.rate = 0.92;
+    utterance.pitch = 1.1;
     utterance.volume = 1;
 
-    // Try to pick a good English voice
+    // Pick a warm, natural-sounding female English voice
     const voices = window.speechSynthesis.getVoices();
-    const preferred = voices.find(v => v.name.includes("Google") && v.lang.startsWith("en")) 
+    const femaleKeywords = ["female", "woman", "Samantha", "Karen", "Moira", "Tessa", "Fiona", "Victoria", "Zira", "Hazel", "Susan", "Jenny", "Aria"];
+    const preferred =
+      voices.find(v => v.lang.startsWith("en") && v.name.includes("Google") && femaleKeywords.some(k => v.name.includes(k)))
+      || voices.find(v => v.lang.startsWith("en") && femaleKeywords.some(k => v.name.includes(k)))
+      || voices.find(v => v.name.includes("Google UK English Female"))
+      || voices.find(v => v.name.includes("Google US English") && !v.name.includes("Male"))
+      || voices.find(v => v.lang.startsWith("en") && v.name.toLowerCase().includes("female"))
       || voices.find(v => v.lang.startsWith("en"));
     if (preferred) utterance.voice = preferred;
 
