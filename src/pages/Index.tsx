@@ -1,8 +1,9 @@
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import AnalyzerSection from "@/components/AnalyzerSection";
-import { Heart } from "lucide-react";
+import { Heart, MessageSquare } from "lucide-react";
 
 const Index = () => {
   const analyzerRef = useRef<HTMLDivElement>(null);
@@ -20,12 +21,21 @@ const Index = () => {
             <Heart className="w-5 h-5 text-primary fill-primary" />
             EmotiSense
           </div>
-          <button
-            onClick={scrollToAnalyzer}
-            className="px-4 py-2 rounded-xl bg-primary/10 text-primary font-body text-sm font-medium hover:bg-primary/20 transition-colors"
-          >
-            Try Analyzer
-          </button>
+          <div className="flex items-center gap-2">
+            <Link
+              to="/chat"
+              className="px-4 py-2 rounded-xl bg-primary text-primary-foreground font-body text-sm font-medium hover:bg-primary/90 transition-colors flex items-center gap-1.5"
+            >
+              <MessageSquare className="w-4 h-4" />
+              Chat
+            </Link>
+            <button
+              onClick={scrollToAnalyzer}
+              className="px-4 py-2 rounded-xl bg-primary/10 text-primary font-body text-sm font-medium hover:bg-primary/20 transition-colors"
+            >
+              Try Analyzer
+            </button>
+          </div>
         </div>
       </nav>
 
